@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Socket Demo</title>
+</head>
+<body>
+    <H3>Web Socket Demo -  Shiv Sharma</H3>
+    <script>
+        const ws = new WebSocket("ws://localhost:8082");
+
+        ws.addEventListener("open", () => {
+            console.log("We are connected!");
+
+            ws.send("My name is Shiv Sharma");
+        });
+
+        ws.addEventListener("message", (e) => {
+            console.log("Server Response:", e.data);
+        })
+    </script>
+</body>
+</html>
